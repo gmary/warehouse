@@ -10,38 +10,9 @@ angular.module("warehouseApp", ['ui.bootstrap','warehouseApp.filters', 'warehous
         templateUrl: "/views/index",
         controller: "AppCtrl"
       });
-      $routeProvider.when("/page1", {
-        templateUrl: "/views/page1"
-      });
-      $routeProvider.when("/page2", {
-        templateUrl: "/views/page2"
-      });
-      $routeProvider.when("/colors/:id", {
-        templateUrl: "/views/color",
-        controller: "ColorCtrl"
-      });
-      $routeProvider.when("/users", {
-        templateUrl: "/views/users",
-        controller: "UserCtrl"
-      });
-      $routeProvider.when("/users/:id", {
-        templateUrl: "/views/user",
-        controller: "UserCtrl"
-      });
-      $routeProvider.when("/routing/public1", {
-        templateUrl: "/views/public/public1"
-      });
-      $routeProvider.when("/routing/public2", {
-        templateUrl: "/views/public/public2"
-      });
-      $routeProvider.when("/routing/authenticated", {
-        templateUrl: "/views/authenticated/authenticated"
-      });
-      $routeProvider.when("/routing/admin1", {
-        templateUrl: "/views/admin/admin1"
-      });
-      $routeProvider.when("/routing/admin2", {
-        templateUrl: "/views/admin/admin2"
+      $routeProvider.when("/products", {
+        templateUrl: "/views/products",
+        controller: "ProductsCtrl"
       });
       $routeProvider.otherwise({
         redirectTo: "/"

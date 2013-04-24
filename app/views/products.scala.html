@@ -1,0 +1,26 @@
+@()
+
+@template(title="Products") {
+<div data-ng-controller="ProductsCtrl">
+  <h1>Products {{curDate}}</h1>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Added date</th>
+            <th>Expiration Term</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="product in products" data-ng-class="{warning:product.almostExpired,error:product.expired}">
+            <td>{{product.name}}</td>
+            <td>{{product.details}}</td>
+            <td>{{product.addDate | date:'dd/MM/yyyy'}}</td>
+            <td>{{product.expirationTerm | date:'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+  </table>
+
+</div>
+}
