@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module("warehouseApp", ['ui.bootstrap','warehouseApp.filters', 'warehouseApp.services', 'warehouseApp.directives', 'warehouseApp.controllers'])
-  .constant("apiUrl", "http://localhost:9000\:9000/api")
-	.config(["$routeProvider", function($routeProvider) {
+    .constant("apiUrl", "http://localhost:9000\:9000/api")
+    .config(["$routeProvider", function($routeProvider) {
       // WARNING!
       // Never use a route starting with "/views/" or "/api/" or "/assets/"
       // For templateUrl, always start with "/views/"
@@ -17,9 +17,8 @@ angular.module("warehouseApp", ['ui.bootstrap','warehouseApp.filters', 'warehous
       $routeProvider.otherwise({
         redirectTo: "/"
       });
-    }
-  ]).config([
+    }])
+    .config([
     "$locationProvider", function($locationProvider) {
       return $locationProvider.html5Mode(true).hashPrefix("!");
-    }
-  ]);
+    }]);

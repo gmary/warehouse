@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-ng-repeat="product in products" data-ng-class="{warning:product.almostExpired,error:product.expired}">
+        <tr data-ng-repeat="product in products" data-ng-class="{error:{{product.expirationTerm | olderThanToday:0}},warning:!{{product.expirationTerm | olderThanToday:0}} && {{product.expirationTerm | olderThanToday:daysBeforeWarn}}}">
             <td>{{product.name}}</td>
             <td>{{product.details}}</td>
             <td>{{product.addDate | date:'dd/MM/yyyy'}}</td>
