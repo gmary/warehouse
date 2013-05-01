@@ -2,13 +2,12 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+->      /api                        api.Routes
+
 # Home page
 GET     /                                   controllers.Application.main(any = "none")
 GET     /views/index                        controllers.Application.index
 GET     /views/products                     controllers.Application.products
-
-#GET     /api/products                      controllers.Products.all
-#GET     /api/products/:id                  controllers.Users.find(id: String)
 
 GET     /assets/*file                       controllers.Assets.at(path="/public", file)
 
