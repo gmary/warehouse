@@ -8,6 +8,7 @@
 GET     /                                   controllers.Application.main(any = "none")
 GET     /views/index                        controllers.Application.index
 GET     /views/products                     controllers.Application.products
+GET     /views/dialogs/removeProductDialog  controllers.Application.removeProductDialog
 
 GET     /assets/*file                       controllers.Assets.at(path="/public", file)
 

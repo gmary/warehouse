@@ -16,4 +16,8 @@ object Application extends Controller {
     Ok(views.html.products())
   }
 
+  def removeProductDialog = Action {
+    Ok(views.html.dialogs.removeProductDialog())
+  }
+
 }

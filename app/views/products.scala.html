@@ -10,6 +10,7 @@
             <th>Details</th>
             <th>Added date</th>
             <th>Expiration Term</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +20,14 @@
             <td>{{product.details}}</td>
             <td>{{product.creationDate | date:'dd/MM/yyyy'}}</td>
             <td>{{product.expirationTerm | date:'dd/MM/yyyy'}}</td>
+            <td>
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <a class="btn" href="#"><i class="icon-edit"></i></a>
+                        <a class="btn btn-danger" data-ng-click="deleteProduct(product)" href="#"><i class="icon-remove"></i></a>
+                    </div>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>

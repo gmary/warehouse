@@ -3,3 +3,4 @@ GET     /products                      controllers.api.Products.all
 POST    /products                      controllers.api.Products.create
 GET     /products/load                 controllers.api.Products.loadData
 #GET     /products/:id                  controllers.api.Products.find(id: String)
+DELETE   /products/:id                 controllers.api.Products.delete(id: ObjectId)

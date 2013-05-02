@@ -6,7 +6,8 @@ import models._
 import controllers.Actions._
 
 import com.mongodb.casbah.WriteConcern
-import org.joda.time.{DateTime, LocalDate}
+import org.joda.time.DateTime
+import org.bson.types.ObjectId
 
 
 object Products extends Controller {
@@ -34,5 +35,10 @@ object Products extends Controller {
       Seq(product1, product2, product3).foreach(p => Product.save(p, WriteConcern.Safe))
       val products = Product.findAll().toList
       Ok(toJson(products))
+  }
+
+  def delete(id: ObjectId) = Action {
+    Product.removeById(id)
+    Ok("")
   }
 }
