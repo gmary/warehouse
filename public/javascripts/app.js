@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("warehouseApp", ['ui.bootstrap','warehouseApp.filters', 'warehouseApp.services', 'warehouseApp.directives', 'warehouseApp.controllers'])
+angular.module("warehouseApp", ['restangular','ui.bootstrap','warehouseApp.filters', 'warehouseApp.services', 'warehouseApp.directives', 'warehouseApp.controllers'])
     .constant("apiUrl", "http://localhost:9000\:9000/api")
     .config(["$routeProvider", function($routeProvider) {
       // WARNING!
@@ -21,4 +21,7 @@ angular.module("warehouseApp", ['ui.bootstrap','warehouseApp.filters', 'warehous
     .config([
     "$locationProvider", function($locationProvider) {
       return $locationProvider.html5Mode(true).hashPrefix("!");
-    }]);
+    }])
+    .config(function(RestangularProvider) {
+        RestangularProvider.setBaseUrl('/api');
+    });;

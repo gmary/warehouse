@@ -10,7 +10,10 @@ angular.module('warehouseApp.filters', []).
   }]).
   filter('olderThanToday', [function() {
       return function(date, days) {
-        var dateToCompare = Date.parse(date);
+        if (date == null){
+            return false;
+        }
+        var dateToCompare = new Date(date);
         var comparisonDate = Date.today().add(days).days();
         var result = comparisonDate.compareTo(dateToCompare);
         return result == 1;
