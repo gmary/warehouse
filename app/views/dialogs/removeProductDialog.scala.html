@@ -1,10 +1,11 @@
 <div class="modal-header">
-    <h1>Remove : {{product.name}}</h1>
+    <button type="button" class="close" data-ng-click="close(false)">&times;</button>
+    <h3>Remove product</h3>
 </div>
 <div class="modal-body">
-    <p>Are you sure ? This operation can't be reverted</p>
+    <p>Are you sure you want to remove product "{{product.name}}" ? <br/>This operation can't be reverted</p>
  </div>
 <div class="modal-footer">
-    <button ng-click="close(true)" class="btn btn-primary" >OK</button>
     <button ng-click="close(false)" class="btn" >Cancel</button>
+    <button ng-click="close(true)" class="btn btn-primary" >Remove product</button>
 </div>

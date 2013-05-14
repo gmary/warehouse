@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <button type="button" class="close" data-ng-click="close(null)">&times;</button>
+    <h3>Edit product</h3>
+</div>
+<div class="modal-body">
+    <form>
+        <fieldset>
+            <label>Name</label>
+            <input type="text" placeholder="Type product name…" data-ng-model="product.name" required >
+            <label>Details</label>
+            <textarea rows="3" data-ng-model="product.details"></textarea>
+            <label>Expiration term</label>
+            <input data-ng-model="product.expirationTerm" ui-date>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button data-ng-click="close(null)" class="btn" >Cancel</button>
+    <button data-ng-click="close(product)" class="btn btn-primary">Save changes</button>
+</div>

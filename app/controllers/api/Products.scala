@@ -41,4 +41,10 @@ object Products extends Controller {
     Product.removeById(id)
     Ok("")
   }
+
+  def update(id: ObjectId) = JsonAction[Product] { requestProduct =>
+    val product = requestProduct.copy(id)
+    Product.save(product, WriteConcern.Safe)
+    Ok(toJson(product))
+  }
 }

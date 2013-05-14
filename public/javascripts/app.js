@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("warehouseApp", ['restangular','ui.bootstrap','warehouseApp.filters', 'warehouseApp.services', 'warehouseApp.directives', 'warehouseApp.controllers'])
+angular.module("warehouseApp", ['restangular','ui.bootstrap','ui.date','warehouseApp.filters', 'warehouseApp.services', 'warehouseApp.directives', 'warehouseApp.controllers'])
     .constant("apiUrl", "http://localhost:9000\:9000/api")
     .config(["$routeProvider", function($routeProvider) {
       // WARNING!
