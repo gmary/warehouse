@@ -14,7 +14,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr data-ng-repeat="product in products"
+        <tr data-ng-repeat="product in products | orderBy:product.creationDate"
             data-ng-class="{error:{{product.expirationTerm | olderThanToday:0}},warning:!{{product.expirationTerm | olderThanToday:0}} && {{product.expirationTerm | olderThanToday:daysBeforeWarn}}}">
             <td>{{product.name}}</td>
             <td>{{product.details}}</td>
