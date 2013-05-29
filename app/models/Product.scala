@@ -48,15 +48,20 @@ trait ProductDAO extends ModelCompanion[Product, ObjectId] {
  */
 trait ProductJson {
 
+  val pattern = "yyyy-MM-dd"
+
+  implicit val dateFormat =
+    Format[DateTime](Reads.jodaDateReads(pattern), Writes.jodaDateWrites(pattern))
+
   implicit val productJsonWrite = new Writes[Product] {
-    def writes(u: Product): JsValue = {
+    def writes(p: Product): JsValue = {
       Json.obj(
-        "id" -> u.id,
-        "name" -> u.name,
-        "details" -> u.details,
-        "category" -> u.category,
-        "creationDate" -> u.creationDate,
-        "expirationTerm" -> u.expirationTerm
+        "id" -> p.id,
+        "name" -> p.name,
+        "details" -> p.details,
+        "category" -> p.category,
+        "creationDate" -> p.creationDate,
+        "expirationTerm" -> p.expirationTerm
       )
     }
   }

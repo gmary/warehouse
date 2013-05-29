@@ -6,11 +6,11 @@
     <form>
         <fieldset>
             <label>Name</label>
-            <input type="text" placeholder="Type product name…" data-ng-model="product.name" required >
+            <input type="text" placeholder="Type product name…" data-ng-model="product.name" data-ng-required="true" >
             <label>Details</label>
             <textarea rows="3" data-ng-model="product.details"></textarea>
             <label>Expiration term</label>
-            <input data-ng-model="product.expirationTerm" ui-date>
+            <input data-ng-model="product.expirationTerm" ui-date="dateOptions" ui-date-format="yy-mm-dd" data-ng-required="true">
         </fieldset>
     </form>
 </div>

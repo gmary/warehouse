@@ -53,6 +53,9 @@ angular.module('warehouseApp.controllers', [])
   }])
   .controller("EditProductDialogController", ['$scope','dialog','product', function($scope,dialog,product) {
         $scope.product = product;
+        $scope.dateOptions = {
+                regional: "fr"
+        };
         $scope.minExpirationTerm = Date.today();
         $scope.close = function(result){
             dialog.close(result);
