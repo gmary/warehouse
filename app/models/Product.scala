@@ -70,7 +70,7 @@ trait ProductJson {
       (__ \ 'name).read[String] ~
       (__ \ 'details).read[String] ~
       (__ \ 'category).read[String] ~
-      (__ \ 'creationDate).read[DateTime](DateTime.now()) ~
+      (__ \ 'creationDate).read[DateTime] ~
       (__ \ 'expirationTerm).readNullable[DateTime]
     )(Product.apply _)
 }
